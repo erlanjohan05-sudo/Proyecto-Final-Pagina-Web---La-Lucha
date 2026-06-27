@@ -1,76 +1,168 @@
 /* =========================
-   HERO SECTION
+   HERO
 ========================= */
 
 .hero {
-  min-height: 90vh;
-
-  display: flex;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: clamp(34rem, 78vh, 46rem);
   align-items: center;
-  justify-content: center;
-
-  text-align: center;
-
+  overflow: hidden;
+  color: var(--color-surface);
+  text-align: left;
   background:
-    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url("../assets/img/banners/hero-banner.jpg");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  color: var(--color-white);
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-ink) 78%, transparent) 0%,
+      color-mix(in srgb, var(--color-brand-dark) 66%, transparent) 48%,
+      color-mix(in srgb, var(--color-ink) 18%, transparent) 100%
+    ),
+    url("../assets/img/banners/hero-banner.webp") center / cover no-repeat;
 }
 
-/* =========================
-   HERO CONTENT
-========================= */
-
-.hero .container {
-  max-width: 800px;
+.hero::after {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: -1;
+  height: 38%;
+  content: "";
+  background: linear-gradient(180deg, transparent, rgba(63, 18, 14, 0.42));
 }
 
-/* =========================
-   HERO TITLE
-========================= */
+.hero__content {
+  display: grid;
+  justify-items: start;
+  max-width: 46rem;
+  gap: var(--space-4);
+  animation: heroEntrada 720ms ease both;
+}
+
+.hero__eyebrow {
+  margin: 0;
+  max-width: 100%;
+  color: var(--color-accent-soft);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
 
 .hero h1 {
-  font-size: 4rem;
-  margin-bottom: 20px;
-  line-height: 1.2;
+  max-width: 100%;
+  color: var(--color-surface);
+  font-size: var(--text-hero);
+  line-height: var(--line-tight);
+  text-wrap: balance;
+  overflow-wrap: break-word;
 }
-
-/* =========================
-   HERO TEXT
-========================= */
 
 .hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
+  max-width: 100%;
+  margin: 0;
+  color: color-mix(in srgb, var(--color-surface-warm) 92%, transparent);
+  font-size: var(--text-md);
+  line-height: var(--line-body);
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.28);
 }
 
-/* =========================
-   HERO BUTTON
-========================= */
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
 
 .hero-btn {
-  display: inline-block;
-
-  background-color: var(--color-primary);
-
-  color: var(--color-white);
-
-  padding: 15px 35px;
-
-  border-radius: var(--radius);
-
-  font-weight: 600;
-
-  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding-inline: var(--space-5);
+  color: var(--color-surface);
+  font-weight: 700;
+  background: var(--color-brand);
+  border: 1px solid var(--color-brand);
+  border-radius: var(--radius-pill);
+  transition:
+    transform var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .hero-btn:hover {
-  background-color: var(--color-primary-dark);
+  background: var(--color-brand-dark);
+  border-color: var(--color-brand-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
 
-  transform: translateY(-3px);
+.hero-btn--secondary {
+  color: var(--color-surface);
+  background: color-mix(in srgb, var(--color-surface) 12%, transparent);
+  border-color: var(--color-border-inverse);
+}
+
+.hero-btn--secondary:hover {
+  color: var(--color-ink);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+@keyframes heroEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 48rem) {
+  .hero {
+    min-height: 34rem;
+    text-align: center;
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--color-ink) 76%, transparent),
+        color-mix(in srgb, var(--color-brand-dark) 68%, transparent)
+      ),
+      url("../assets/img/banners/hero-banner.webp") center / cover no-repeat;
+  }
+
+  .hero__content {
+    width: min(100% - calc(var(--container-padding) * 2), var(--container-narrow));
+    justify-items: center;
+  }
+
+  .hero__eyebrow {
+    width: min(100%, 28ch);
+    font-size: var(--text-xs);
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+
+  .hero h1 {
+    width: min(100%, 12ch);
+  }
+
+  .hero p {
+    width: min(100%, 31ch);
+  }
+
+  .hero__actions {
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__content {
+    animation: none;
+  }
 }

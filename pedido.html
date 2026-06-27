@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="theme-color" content="#6f1f17" />
+
+    <meta
+      name="description"
+      content="Pedido de productos y promociones de La Lucha Sanguchería Criolla."
+    />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
+    <link rel="icon" href="assets/icons/icon-192.png" />
+
+    <title>Pedido | La Lucha Sanguchería Criolla</title>
+
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/pedido.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    />
+  </head>
+
+  <body>
+    <div id="navbar-container"></div>
+
+    <main>
+      <section class="pedido-hero reveal">
+        <div class="container pedido-hero__content">
+          <p class="section-eyebrow">Pedido</p>
+
+          <h1>Confirma tu pedido</h1>
+
+          <p>
+            Revisa tus productos, ajusta cantidades y deja tus datos para coordinar recojo o
+            delivery.
+          </p>
+        </div>
+      </section>
+
+      <section class="pedido-section reveal" aria-labelledby="pedido-title">
+        <div class="container pedido-layout">
+          <article class="pedido-resumen" aria-labelledby="pedido-resumen-title">
+            <span class="pedido-resumen__label">Resumen</span>
+
+            <h2 id="pedido-resumen-title">Tu pedido</h2>
+
+            <p class="pedido-resumen__texto" id="pedido-resumen-texto">
+              Agrega productos desde la carta para iniciar tu pedido.
+            </p>
+
+            <div class="pedido-resumen__box">
+              <span class="pedido-resumen__tipo" id="pedido-tipo-preview">Pedido</span>
+
+              <strong class="pedido-resumen__nombre" id="pedido-nombre-preview">Pedido vacío</strong>
+
+              <div class="pedido-lista" id="pedido-lista"></div>
+
+              <div class="pedido-resumen__meta">
+                <span class="pedido-resumen__precio" id="pedido-precio-preview"></span>
+                <span class="pedido-resumen__igv" id="pedido-igv-preview"></span>
+                <span class="pedido-resumen__total" id="pedido-total-preview"></span>
+              </div>
+            </div>
+
+            <div class="pedido-resumen__acciones">
+              <a class="pedido-resumen__link" href="carta.html">Seguir agregando productos</a>
+            </div>
+          </article>
+
+          <form class="pedido-form" id="pedido-form" aria-labelledby="pedido-title" novalidate>
+            <div class="pedido-form__header">
+              <span class="contacto-label">Entrega y contacto</span>
+
+              <h2 id="pedido-title" class="pedido-form__title">Datos para coordinar tu pedido</h2>
+
+              <p class="pedido-form__descripcion">
+                Indícanos cómo deseas recibirlo y cómo podemos contactarte.
+              </p>
+            </div>
+
+            <input type="hidden" id="origen-pedido" name="origenPedido" />
+            <input type="hidden" id="tipo-pedido" name="tipoPedido" value="producto" />
+            <input type="hidden" id="cantidad" name="cantidad" value="1" />
+            <input type="hidden" id="item-pedido" name="itemPedido" />
+
+            <div class="form-grupo">
+              <label for="modalidad-pedido">¿Cómo deseas recibir tu pedido?</label>
+              <select id="modalidad-pedido" name="modalidadPedido" required>
+                <option value="">Selecciona una opción</option>
+                <option value="recojo">Recojo en tienda</option>
+                <option value="delivery">Delivery</option>
+              </select>
+            </div>
+
+            <div class="form-grupo" id="grupo-local-recojo" hidden>
+              <label for="local-recojo">Tienda para recojo</label>
+              <select id="local-recojo" name="localRecojo">
+                <option value="">Selecciona una tienda</option>
+                <option value="Miraflores">Miraflores</option>
+                <option value="Barranco">Barranco</option>
+                <option value="San Miguel">San Miguel</option>
+                <option value="Chorrillos">Chorrillos</option>
+              </select>
+            </div>
+
+            <div class="form-grupo" id="grupo-hora-recojo" hidden>
+              <label for="hora-recojo">Hora referencial de recojo</label>
+              <small class="form-error" id="hora-recojo-error" aria-live="polite"></small>
+              <input
+                type="time"
+                id="hora-recojo"
+                name="horaRecojo"
+                min="08:00"
+                max="22:00"
+                aria-describedby="hora-recojo-error"
+              />
+              <small class="form-aviso">
+                Atención de 8:00 a 22:00. En tienda se atiende por orden de llegada.
+              </small>
+            </div>
+
+            <div class="form-grupo" id="grupo-direccion-delivery" hidden>
+              <label for="direccion-delivery">Dirección de entrega</label>
+              <input
+                type="text"
+                id="direccion-delivery"
+                name="direccionDelivery"
+                placeholder="Ej: Av. La Marina 123, San Miguel"
+              />
+            </div>
+
+            <div class="form-grupo">
+              <label for="metodo-pago">Método de pago preferido</label>
+              <select id="metodo-pago" name="metodoPago" required>
+                <option value="">Selecciona una opción</option>
+                <option value="yape">Yape</option>
+                <option value="plin">Plin</option>
+                <option value="tarjeta">Tarjeta al recibir</option>
+                <option value="efectivo">Efectivo</option>
+              </select>
+            </div>
+
+            <div class="form-grupo">
+              <label for="nombre">Nombre completo</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                autocomplete="name"
+                minlength="3"
+                placeholder="Ej: Juan Pérez"
+                required
+              />
+            </div>
+
+            <div class="form-grupo">
+              <label for="telefono">Teléfono o WhatsApp</label>
+              <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                autocomplete="tel"
+                inputmode="numeric"
+                maxlength="9"
+                pattern="9[0-9]{8}"
+                placeholder="Ej: 945834043"
+                aria-describedby="telefono-error"
+                required
+              />
+              <small class="form-error" id="telefono-error" aria-live="polite"></small>
+            </div>
+
+            <div class="form-grupo">
+              <label for="correo">Correo electrónico</label>
+              <input
+                type="email"
+                id="correo"
+                name="correo"
+                autocomplete="email"
+                placeholder="Ej: juan@correo.com"
+                aria-describedby="correo-error"
+                required
+              />
+              <small class="form-error" id="correo-error" aria-live="polite"></small>
+            </div>
+
+            <div class="form-grupo">
+              <label for="producto-pedido">Productos seleccionados</label>
+              <textarea
+                id="producto-pedido"
+                name="productoPedido"
+                rows="4"
+                placeholder="Agrega productos desde la carta"
+                readonly
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-grupo">
+              <label for="mensaje">Notas para tu pedido</label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                rows="5"
+                placeholder="Ej: Sin cebolla, poco ají, referencia de entrega o rango de horario."
+              ></textarea>
+              <small class="form-ayuda">Opcional. Sirve para ajustes del producto o referencias de entrega.</small>
+            </div>
+
+            <p
+              class="pedido-form__feedback"
+              id="pedido-feedback"
+              role="status"
+              aria-live="polite"
+            ></p>
+
+            <button type="submit" class="pedido-btn">Confirmar pedido</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="js/menu.js"></script>
+    <script src="js/main.js?v=20260612-cleanup"></script>
+    <script src="js/api-config.js?v=20260612"></script>
+    <script src="js/solicitud-store.js?v=20260613-solicitud"></script>
+    <script src="js/pedido.js?v=20260613-formulario"></script>
+    <script src="js/animaciones.js?v=20260612-visible"></script>
+  </body>
+</html>

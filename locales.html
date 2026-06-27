@@ -1,96 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="theme-color" content="#6f1f17" />
+
+    <meta
+      name="description"
+      content="La Lucha Sanguchería Criolla: locales, horarios, atención en salón y delivery."
+    />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
+    <link rel="icon" href="assets/icons/icon-192.png" />
+
     <title>Locales | La Lucha Sanguchería Criolla</title>
 
-    <link rel="stylesheet" href="css/variables.css"/>
-    <link rel="stylesheet" href="css/layout.css"/>
-    <link rel="stylesheet" href="css/navbar.css"/>
-    <link rel="stylesheet" href="css/footer.css"/>
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/cards.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/locales.css" />
 
-    <link rel="stylesheet" href="css/locales.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    />
+  </head>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com" />
-    <link rel="stylesheet" href="https://fonts.gstatic.com" crossorigin />
+  <body>
+    <div id="navbar-container"></div>
 
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-
-</head>
-<body>
-    <div id = "navbar-container"></div>
-    <!-- Barra informativa -->
-<div class="top-bar">
-
-  <div class="top-bar-track">
-
-    <span>
-      Haz tus pedidos DELIVERY llamando o al WhatsApp de tu tienda más cercana.
-    </span>
-
-    <span>
-      Haz tus pedidos DELIVERY llamando o al WhatsApp de tu tienda más cercana.
-    </span>
-
-    <span>
-      Haz tus pedidos DELIVERY llamando o al WhatsApp de tu tienda más cercana.
-    </span>
-
-    
-    <span>
-      Haz tus pedidos DELIVERY llamando o al WhatsApp de tu tienda más cercana.
-    </span>
-
-  </div>
-
-</div>
     <main>
-        <section class="page-header">
-            <div class = "container"> 
-                <h1>Nuestros locales</h1>
-                <p>Encuentra tu sede más cercana y disfruta la experiencia La Lucha.</p>
-            </div>
-        </section>
+      <section class="page-header">
+        <div class="container">
+          <h1>Nuestros locales</h1>
 
-        <section class="locales-section">
-            <div class="container" id="locales-container"></div>
-        </section>
+          <p>Encuentra tu sede más cercana y disfruta la experiencia La Lucha.</p>
+        </div>
+      </section>
+
+      <section class="locales-section">
+        <div class="container" id="locales-container"></div>
+      </section>
     </main>
-
-    <div class="bottom-bar">
-
-  <div class="bottom-bar-track">
-
-    <span>
-      Atención en SALÓN y DELIVERY: solo hasta 30 minutos antes del cierre de cada local
-    </span>
-
-    <span>
-      Atención en SALÓN y DELIVERY: solo hasta 30 minutos antes del cierre de cada local
-    </span>
-
-    <span>
-      Atención en SALÓN y DELIVERY: solo hasta 30 minutos antes del cierre de cada local
-    </span>
-
-    <span>
-      Atención en SALÓN y DELIVERY: solo hasta 30 minutos antes del cierre de cada local
-    </span>
-
-  </div>
-
-</div>
 
     <div id="footer-container"></div>
 
-
-    <script src="js/main.js"></script>
-
-    <script src="data/locales.js"></script>
-    <script src="js/locales.js"></script>
-    
-</body>
+    <script src="js/menu.js"></script>
+    <script src="js/main.js?v=20260612-cleanup"></script>
+    <script src="js/api-config.js?v=20260612"></script>
+    <script src="js/locales.js?v=20260612-visible2"></script>
+    <script src="js/animaciones.js?v=20260612-visible"></script>
+  </body>
 </html>

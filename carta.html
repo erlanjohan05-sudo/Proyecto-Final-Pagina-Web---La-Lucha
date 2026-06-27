@@ -1,71 +1,220 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
   <head>
+    <!-- =========================
+       META TAGS
+  ========================== -->
+
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="theme-color" content="#6f1f17" />
+
+    <meta
+      name="description"
+      content="La Lucha Sanguchería Criolla: carta, promociones, locales y contacto."
+    />
+
+    <link rel="manifest" href="site.webmanifest" />
+
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
+
+    <link rel="icon" href="assets/icons/icon-192.png" />
+
+    <!-- =========================
+       TITLE
+    ========================== -->
 
     <title>Carta | La Lucha Sanguchería Criolla</title>
 
-    <!-- CSS global -->
+    <!-- =========================
+       CSS GLOBAL
+  ========================== -->
+
     <link rel="stylesheet" href="css/variables.css" />
+
     <link rel="stylesheet" href="css/layout.css" />
+
     <link rel="stylesheet" href="css/navbar.css" />
+
     <link rel="stylesheet" href="css/footer.css" />
 
-    <!-- CSS específico de carta -->
     <link rel="stylesheet" href="css/carta.css" />
 
-    <!-- Google Fonts -->
+    <link rel="stylesheet" href="css/cards.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+
+    <!-- =========================
+       GOOGLE FONTS
+  ========================== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
 
   <body>
-    <!-- Navbar cargado desde components/navbar.html -->
+    <!-- =========================
+       NAVBAR DINÁMICO
+  ========================== -->
+
     <div id="navbar-container"></div>
 
     <main>
-      <!-- Encabezado de página -->
-      <section class="page-header">
-        <div class="container">
-          <h1>Nuestra Carta</h1>
-          <p>Productos criollos preparados con tradición, frescura y calidad.</p>
-        </div>
-      </section>
+      <section class="carta-hero reveal">
+        <div class="overlay"></div>
 
-      <!-- Categorías / filtros futuros -->
-      <section class="carta-categorias">
-        <div class="container">
-          <h2>Categorías</h2>
+        <div class="container carta-hero-content">
+          <p class="section-eyebrow">Carta criolla</p>
+          <h1>Nuestra Carta Criolla</h1>
 
-          <div class="categorias-lista">
-            <button type="button">Sánguches</button>
-            <button type="button">Bebidas</button>
-            <button type="button">Postres</button>
-            <button type="button">Promociones</button>
+          <p class="hero-description">
+            Sánguches artesanales, bebidas tradicionales y acompañamientos pensados para pedir con
+            sabor peruano.
+          </p>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <strong id="carta-total-productos">--</strong>
+              <span>productos base</span>
+            </div>
+
+            <div class="stat-card">
+              <strong id="carta-total-categorias">--</strong>
+              <span>categorías</span>
+            </div>
+
+            <div class="stat-card">
+              <strong>6</strong>
+              <span>por página</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Productos -->
-      <section class="carta-productos">
+      <section class="carta-productos reveal" aria-labelledby="productos-title">
         <div class="container">
-          <h2>Productos destacados</h2>
+          <div class="section-title">
+            <p class="section-eyebrow">Carta interactiva</p>
+            <h2 id="productos-title">Sabores listos para pedir</h2>
+            <p>Busca, filtra y elige tu favorito sin perder de vista los productos.</p>
+          </div>
+
+          <div class="carta-toolbar" aria-label="Buscar y filtrar productos">
+            <div class="buscador-container">
+              <span class="material-symbols-rounded" aria-hidden="true">search</span>
+              <input
+                type="text"
+                id="buscador-input"
+                aria-label="Buscar productos en la carta"
+                placeholder="Buscar chicharrón, café, chicha..."
+              />
+            </div>
+
+            <div class="categorias-lista" aria-label="Filtrar productos por categoría">
+              <button type="button" data-categoria="todos" class="activo">
+                <span class="material-symbols-rounded" aria-hidden="true">apps</span>
+                <span class="categoria-label">Todos</span>
+                <span class="categoria-count">0</span>
+              </button>
+
+              <button type="button" data-categoria="sanguches">
+                <span class="material-symbols-rounded" aria-hidden="true">lunch_dining</span>
+                <span class="categoria-label">Sánguches</span>
+                <span class="categoria-count">0</span>
+              </button>
+
+              <button type="button" data-categoria="bebidas">
+                <span class="material-symbols-rounded" aria-hidden="true">local_cafe</span>
+                <span class="categoria-label">Bebidas</span>
+                <span class="categoria-count">0</span>
+              </button>
+
+              <button type="button" data-categoria="acompanamientos">
+                <span class="material-symbols-rounded" aria-hidden="true">restaurant</span>
+                <span class="categoria-label">Acompañamientos</span>
+                <span class="categoria-count">0</span>
+              </button>
+
+              <button type="button" data-categoria="combos">
+                <span class="material-symbols-rounded" aria-hidden="true">fastfood</span>
+                <span class="categoria-label">Combos</span>
+                <span class="categoria-count">0</span>
+              </button>
+
+              <button type="button" data-categoria="postres">
+                <span class="material-symbols-rounded" aria-hidden="true">bakery_dining</span>
+                <span class="categoria-label">Postres</span>
+                <span class="categoria-count">0</span>
+              </button>
+
+              <button type="button" data-categoria="promociones">
+                <span class="material-symbols-rounded" aria-hidden="true">sell</span>
+                <span class="categoria-label">Promociones</span>
+                <span class="categoria-count">0</span>
+              </button>
+            </div>
+
+            <button class="carta-toolbar__clear" id="limpiar-filtros" type="button" hidden>
+              Limpiar
+            </button>
+          </div>
+
+          <div class="productos-estado" id="productos-estado" aria-live="polite"></div>
+
           <div class="productos-grid" id="productos-grid"></div>
+
+          <nav class="paginacion" aria-label="Paginación de productos">
+            <button
+              class="paginacion__btn"
+              id="btn-anterior"
+              type="button"
+              aria-label="Ir a la página anterior"
+            >
+              Anterior
+            </button>
+
+            <div class="paginacion__numeros" id="paginacion-numeros"></div>
+
+            <button
+              class="paginacion__btn"
+              id="btn-siguiente"
+              type="button"
+              aria-label="Ir a la página siguiente"
+            >
+              Siguiente
+            </button>
+          </nav>
         </div>
       </section>
     </main>
 
-    <!-- Footer cargado desde components/footer.html -->
+    <!-- =========================
+       FOOTER DINÁMICO
+  ========================== -->
+
     <div id="footer-container"></div>
 
-    <!-- JS global -->
-    <script src="js/main.js"></script>
-    <script src="data/productos.js"></script>
-    <script src="js/productos.js"></script>
+    <!-- =========================
+       JS GLOBAL
+  ========================== -->
+
+    <script src="js/menu.js"></script>
+    <script src="js/main.js?v=20260612-cleanup"></script>
+    <script src="js/api-config.js?v=20260612"></script>
+    <script src="js/solicitud-store.js?v=20260613-solicitud"></script>
+
+    <!-- =========================
+       JS CARTA
+  ========================== -->
+
+    <script src="js/productos.js?v=20260613-solicitud"></script>
+    <script src="js/animaciones.js?v=20260612-visible"></script>
   </body>
 </html>

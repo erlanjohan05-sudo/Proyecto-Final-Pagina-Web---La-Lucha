@@ -1,8 +1,21 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="theme-color" content="#6f1f17" />
+
+    <meta
+      name="description"
+      content="Conoce la historia, misión, visión y valores de La Lucha Sanguchería Criolla."
+    />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
+    <link rel="icon" href="assets/icons/icon-192.png" />
+
     <title>Nosotros | La Lucha Sanguchería Criolla</title>
 
     <!-- CSS del proyecto -->
@@ -10,6 +23,7 @@
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/animations.css" />
 
     <!-- CSS propio de esta página -->
     <link rel="stylesheet" href="css/nosotros.css" />
@@ -18,107 +32,274 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
     />
   </head>
   <body>
-
     <!-- NAVBAR -->
     <div id="navbar-container"></div>
 
     <!-- ================================
          SECCIÓN 1: HERO
     ================================= -->
-    <section class="nosotros-hero">
-      <div class="nosotros-hero__overlay"></div>
-      <div class="nosotros-hero__content">
-        <p class="nosotros-hero__subtitulo">Desde 2009</p>
-        <h1 class="nosotros-hero__titulo">Quiénes Somos</h1>
-        <p class="nosotros-hero__descripcion">
-          Más de 15 años llevando el sabor criollo al corazón de los peruanos.
-        </p>
-      </div>
-    </section>
+    <main>
+      <section class="nosotros-hero">
+        <div class="nosotros-hero__overlay"></div>
+        <div class="nosotros-hero__content">
+          <p class="nosotros-hero__subtitulo">Desde 2009</p>
+          <h1 class="nosotros-hero__titulo">Quiénes Somos</h1>
+          <p class="nosotros-hero__descripcion">
+            Más de 15 años llevando el sabor criollo al corazón de los peruanos.
+          </p>
+        </div>
+      </section>
 
-    <!-- ================================
+      <!-- ================================
          SECCIÓN 2: SOBRE LA EMPRESA
     ================================= -->
-    <section class="nosotros-empresa">
-      <div class="container">
-        <div class="nosotros-empresa__grid">
+      <section class="nosotros-empresa reveal">
+        <div class="container">
+          <div class="nosotros-empresa__grid">
+            <!-- Texto -->
+            <div class="nosotros-empresa__texto">
+              <span class="nosotros-label">Nuestra Historia</span>
+              <h2 class="nosotros-empresa__titulo">La Lucha Sanguchería Criolla</h2>
+              <p>
+                Fundada el
+                <strong>15 de agosto de 2009</strong>
+                por
+                <strong>César Taboada Valdiezo</strong>
+                en un pequeño local de apenas 12 m² en el distrito de Miraflores, Lima, La Lucha
+                nació con una misión clara: rescatar y celebrar el sabor auténtico de la sanguchería
+                criolla peruana.
+              </p>
+              <p>
+                Desde sus inicios, la empresa se caracterizó por elaborar diariamente su propio pan
+                y utilizar insumos frescos sin preservantes, garantizando un producto artesanal de
+                alta calidad en cada local.
+              </p>
+              <p>
+                Hoy, con presencia en Lima, Arequipa, Trujillo y en países como
+                <strong>Chile, Colombia y México</strong>
+                , La Lucha se ha consolidado como un referente de la gastronomía peruana a nivel
+                internacional.
+              </p>
+            </div>
 
-          <!-- Texto -->
-          <div class="nosotros-empresa__texto">
-            <span class="nosotros-label">Nuestra Historia</span>
-            <h2 class="nosotros-empresa__titulo">La Lucha Sanguchería Criolla</h2>
-            <p>
-              Fundada el <strong>15 de agosto de 2009</strong> por
-              <strong>César Taboada Valdiezo</strong> en un pequeño local de
-              apenas 12 m² en el distrito de Miraflores, Lima, La Lucha nació
-              con una misión clara: rescatar y celebrar el sabor auténtico de la
-              sanguchería criolla peruana.
-            </p>
-            <p>
-              Desde sus inicios, la empresa se caracterizó por elaborar
-              diariamente su propio pan y utilizar insumos frescos sin
-              preservantes, garantizando un producto artesanal de alta calidad
-              en cada local.
-            </p>
-            <p>
-              Hoy, con presencia en Lima, Arequipa, Trujillo y en países como
-              <strong>Chile, Colombia y México</strong>, La Lucha se ha
-              consolidado como un referente de la gastronomía peruana a nivel
-              internacional.
-            </p>
+            <!-- Datos rápidos -->
+            <div class="nosotros-empresa__datos">
+              <div class="dato-card">
+                <span class="material-symbols-rounded dato-card__icono" aria-hidden="true">
+                  business
+                </span>
+                <span class="dato-card__label">Razón Social</span>
+                <span class="dato-card__valor">Lucha Partners S.A.C.</span>
+              </div>
+              <div class="dato-card">
+                <span class="material-symbols-rounded dato-card__icono" aria-hidden="true">
+                  event
+                </span>
+                <span class="dato-card__label">Fundación</span>
+                <span class="dato-card__valor">15 de agosto de 2009</span>
+              </div>
+              <div class="dato-card">
+                <span class="material-symbols-rounded dato-card__icono" aria-hidden="true">
+                  person
+                </span>
+                <span class="dato-card__label">Fundador</span>
+                <span class="dato-card__valor">César Taboada Valdiezo</span>
+              </div>
+              <div class="dato-card">
+                <span class="material-symbols-rounded dato-card__icono" aria-hidden="true">
+                  storefront
+                </span>
+                <span class="dato-card__label">Primer Local</span>
+                <span class="dato-card__valor">Miraflores, Lima</span>
+              </div>
+              <div class="dato-card">
+                <span class="material-symbols-rounded dato-card__icono" aria-hidden="true">
+                  restaurant
+                </span>
+                <span class="dato-card__label">Rubro</span>
+                <span class="dato-card__valor">Gastronomía Criolla</span>
+              </div>
+            </div>
           </div>
-
-          <!-- Datos rápidos -->
-          <div class="nosotros-empresa__datos">
-            <div class="dato-card">
-              <span class="dato-card__icono">📋</span>
-              <span class="dato-card__label">Razón Social</span>
-              <span class="dato-card__valor">Lucha Partners S.A.C.</span>
-            </div>
-            <div class="dato-card">
-              <span class="dato-card__icono">📅</span>
-              <span class="dato-card__label">Fundación</span>
-              <span class="dato-card__valor">15 de agosto de 2009</span>
-            </div>
-            <div class="dato-card">
-              <span class="dato-card__icono">👤</span>
-              <span class="dato-card__label">Fundador</span>
-              <span class="dato-card__valor">César Taboada Valdiezo</span>
-            </div>
-            <div class="dato-card">
-              <span class="dato-card__icono">📍</span>
-              <span class="dato-card__label">Primer Local</span>
-              <span class="dato-card__valor">Miraflores, Lima</span>
-            </div>
-            <div class="dato-card">
-              <span class="dato-card__icono">🍽️</span>
-              <span class="dato-card__label">Rubro</span>
-              <span class="dato-card__valor">Gastronomía Criolla</span>
-            </div>
-          </div>
-
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- CONTENIDO DINÁMICO CON REACT -->
-<div id="nosotros-react-root"></div>
+      <!-- ================================
+         SECCIÓN 3: MISIÓN Y VISIÓN
+    ================================= -->
+      <section class="nosotros-mv reveal">
+        <div class="container">
+          <h2 class="nosotros-seccion-titulo">Misión y Visión</h2>
+          <div class="nosotros-mv__grid">
+            <div class="mv-card mv-card--mision">
+              <span class="material-symbols-rounded mv-card__icono" aria-hidden="true">flag</span>
+              <h3 class="mv-card__titulo">Misión</h3>
+              <p class="mv-card__texto">
+                Conservar la esencia de la gastronomía peruana fusionando sánguches criollos con un
+                ambiente tradicional y acogedor, cuidando cada detalle del proceso de producción y
+                atención al cliente, para hacer sentir en casa a cada comensal y garantizar una
+                experiencia de sabor auténtico, fresco y de calidad en cada visita.
+              </p>
+            </div>
+
+            <div class="mv-card mv-card--vision">
+              <span class="material-symbols-rounded mv-card__icono" aria-hidden="true">
+                visibility
+              </span>
+              <h3 class="mv-card__titulo">Visión</h3>
+              <p class="mv-card__texto">
+                Afianzar diariamente la creencia de que el esfuerzo y la dedicación son claves para
+                alcanzar las metas, cumpliendo los más altos estándares de calidad para ofrecer al
+                cliente un producto sabroso, jugoso y fresco que represente con orgullo la identidad
+                gastronómica del Perú, tanto a nivel nacional como internacional.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================
+           SECCIÓN 4: VALORES
+      ================================= -->
+      <section class="nosotros-valores reveal">
+        <div class="container">
+          <h2 class="nosotros-seccion-titulo">Nuestros Valores</h2>
+
+          <div class="nosotros-valores__grid">
+            <div class="valor-card">
+              <span class="material-symbols-rounded valor-card__icono" aria-hidden="true">
+                bakery_dining
+              </span>
+              <h3 class="valor-card__titulo">Calidad Artesanal</h3>
+              <p class="valor-card__texto">
+                Pan elaborado diariamente y sin preservantes. Insumos frescos distribuidos desde
+                nuestra planta propia cada día.
+              </p>
+            </div>
+
+            <div class="valor-card">
+              <span class="material-symbols-rounded valor-card__icono" aria-hidden="true">
+                support_agent
+              </span>
+              <h3 class="valor-card__titulo">El Cliente es el Rey</h3>
+              <p class="valor-card__texto">
+                Cada trabajador se capacita para brindar una atención de excelencia, porque la
+                satisfacción del cliente es nuestra prioridad.
+              </p>
+            </div>
+
+            <div class="valor-card">
+              <span class="material-symbols-rounded valor-card__icono" aria-hidden="true">
+                workspace_premium
+              </span>
+              <h3 class="valor-card__titulo">Identidad Peruana</h3>
+              <p class="valor-card__texto">
+                Representamos con orgullo la gastronomía criolla del Perú, llevando su sabor
+                auténtico a nivel nacional e internacional.
+              </p>
+            </div>
+
+            <div class="valor-card">
+              <span class="material-symbols-rounded valor-card__icono" aria-hidden="true">
+                public
+              </span>
+              <h3 class="valor-card__titulo">Expansión Global</h3>
+              <p class="valor-card__texto">
+                Con presencia en Chile, Colombia y México, seguimos creciendo para llevar el sabor
+                criollo a más rincones del mundo.
+              </p>
+            </div>
+
+            <div class="valor-card">
+              <span class="material-symbols-rounded valor-card__icono" aria-hidden="true">
+                verified
+              </span>
+              <h3 class="valor-card__titulo">Estándares de Calidad</h3>
+              <p class="valor-card__texto">
+                Contamos con certificaciones BPM y POES, garantizando altos estándares sanitarios en
+                todos nuestros locales.
+              </p>
+            </div>
+
+            <div class="valor-card">
+              <span class="material-symbols-rounded valor-card__icono" aria-hidden="true">
+                trending_up
+              </span>
+              <h3 class="valor-card__titulo">Esfuerzo y Dedicación</h3>
+              <p class="valor-card__texto">
+                Desde un local de 12 m² hasta franquicias internacionales, nuestro crecimiento
+                refleja la cultura del trabajo duro.
+              </p>
+            </div>
+
+            <div class="valor-card">
+              <span class="material-symbols-rounded valor-card__icono" aria-hidden="true">
+                handshake
+              </span>
+              <h3 class="valor-card__titulo">Compromiso</h3>
+              <p class="valor-card__texto">
+                Mantenemos altos estándares de calidad, limpieza y servicio para ofrecer una
+                experiencia confiable en cada visita.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================
+           SECCIÓN 5: CIFRAS
+      ================================= -->
+      <section class="nosotros-cifras reveal">
+        <div class="container">
+          <div class="nosotros-cifras__grid">
+            <div class="cifra-card">
+              <span class="cifra-card__numero">+15</span>
+              <span class="cifra-card__label">Años de trayectoria</span>
+            </div>
+            <div class="cifra-card">
+              <span class="cifra-card__numero">3</span>
+              <span class="cifra-card__label">Países internacionales</span>
+            </div>
+            <div class="cifra-card">
+              <span class="cifra-card__numero">4</span>
+              <span class="cifra-card__label">Ciudades en el Perú</span>
+            </div>
+            <div class="cifra-card">
+              <span class="cifra-card__numero">2009</span>
+              <span class="cifra-card__label">Año de fundación</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================
+         SECCIÓN 6: FRASE DE CIERRE
+    ================================= -->
+      <section class="nosotros-frase reveal">
+        <div class="container">
+          <blockquote class="nosotros-frase__texto">
+            "Cada sánguche cuenta una historia. La nuestra empezó en Miraflores y hoy llega a todo
+            el mundo."
+          </blockquote>
+          <p class="nosotros-frase__autor">&mdash; César Taboada Valdiezo, Fundador</p>
+        </div>
+      </section>
+    </main>
 
     <!-- FOOTER -->
-   <div id="footer-container"></div>
+    <div id="footer-container"></div>
 
-<script src="js/menu.js"></script>
-<script src="js/main.js?v=20260612-cleanup"></script>
-<script src="js/animaciones.js?v=20260612-visible"></script>
-
-<!-- React solo para la página Nosotros -->
-<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-<script src="js/nosotros.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/main.js?v=20260612-cleanup"></script>
+    <script src="js/animaciones.js?v=20260612-visible"></script>
   </body>
 </html>

@@ -3,154 +3,366 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6f1f17" />
+    <meta
+      name="description"
+      content="La Lucha Sanguchería Criolla: carta, promociones, locales y contacto."
+    />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
+    <link rel="icon" href="assets/icons/icon-192.png" />
+
     <title>Contacto | La Lucha Sanguchería Criolla</title>
- 
+
     <!-- CSS del proyecto -->
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/footer.css" />
-
     <link rel="stylesheet" href="css/contacto.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
- 
     <!-- NAVBAR -->
     <div id="navbar-container"></div>
 
-    <section class="contacto-hero">
-      <div class="contacto-hero__overlay"></div>
-      <div class="contacto-hero__content">
-        <p class="contacto-hero__subtitulo">Estamos para ayudarte</p>
-        <h1 class="contacto-hero__titulo">Contáctanos</h1>
-        <p class="contacto-hero__descripcion">
-          Escríbenos y nos pondremos en contacto contigo a la brevedad.
-        </p>
-      </div>
-    </section>
-
-    <section class="contacto-main">
-      <div class="container">
-        <div class="contacto-main__grid">
- 
-          <div class="contacto-form-wrapper">
-            <span class="contacto-label">Envíanos un mensaje</span>
-            <h2 class="contacto-form-titulo">¿Tienes alguna consulta?</h2>
- 
-            <form class="contacto-form" action="#" method="POST">
- 
-              <div class="form-grupo">
-                <label for="nombre">Nombre completo</label>
-                <input
-                  type="text"
-                  id="nombre"
-                  name="nombre"
-                  placeholder="Ej: Juan Pérez"
-                  required
-                />
-              </div>
- 
-              <div class="form-grupo">
-                <label for="correo">Correo electrónico</label>
-                <input
-                  type="email"
-                  id="correo"
-                  name="correo"
-                  placeholder="Ej: juan@correo.com"
-                  required
-                />
-              </div>
- 
-              <div class="form-grupo">
-                <label for="asunto">Asunto</label>
-                <input
-                  type="text"
-                  id="asunto"
-                  name="asunto"
-                  placeholder="Ej: Consulta sobre locales"
-                  required
-                />
-              </div>
- 
-              <div class="form-grupo">
-                <label for="mensaje">Mensaje</label>
-                <textarea
-                  id="mensaje"
-                  name="mensaje"
-                  rows="5"
-                  placeholder="Escribe tu mensaje aquí..."
-                  required
-                ></textarea>
-              </div>
- 
-              <button type="submit" class="contacto-btn">
-                Enviar mensaje
-              </button>
- 
-            </form>
-          </div>
- 
-          <div class="contacto-info">
-            <span class="contacto-label">Información de contacto</span>
-            <h2 class="contacto-info-titulo">Encuéntranos</h2>
- 
-            <div class="info-card">
-              <span class="info-card__icono">📍</span>
-              <div>
-                <span class="info-card__label">Dirección principal</span>
-                <span class="info-card__valor">Miraflores, Lima, Perú</span>
-              </div>
-            </div>
- 
-            <div class="info-card">
-              <span class="info-card__icono">📞</span>
-              <div>
-                <span class="info-card__label">Teléfono</span>
-                <span class="info-card__valor">(01) 123-4567</span>
-              </div>
-            </div>
- 
-            <div class="info-card">
-              <span class="info-card__icono">✉️</span>
-              <div>
-                <span class="info-card__label">Correo</span>
-                <span class="info-card__valor">contacto@lalucha.pe</span>
-              </div>
-            </div>
- 
-            <div class="info-card">
-              <span class="info-card__icono">🕐</span>
-              <div>
-                <span class="info-card__label">Horario de atención</span>
-                <span class="info-card__valor">Lunes a Domingo: 8:00 am – 10:00 pm</span>
-              </div>
-            </div>
-
-            <div class="contacto-redes">
-              <p class="contacto-redes__titulo">Síguenos en redes</p>
-              <div class="contacto-redes__iconos">
-                <a href="#" class="red-social" title="Instagram">📷 Instagram</a>
-                <a href="#" class="red-social" title="Facebook">📘 Facebook</a>
-              </div>
-            </div>
- 
-          </div>
- 
+    <main>
+      <section class="contacto-hero">
+        <div class="contacto-hero__overlay"></div>
+        <div class="contacto-hero__content">
+          <p class="contacto-hero__subtitulo">Estamos para ayudarte</p>
+          <h1 class="contacto-hero__titulo">Contáctanos</h1>
+          <p class="contacto-hero__descripcion">
+            Escríbenos y nos pondremos en contacto contigo a la brevedad.
+          </p>
         </div>
-      </div>
-    </section>
- 
+      </section>
+
+      <section class="contacto-main">
+        <div class="container">
+          <div class="contacto-main__grid">
+            <div class="contacto-form-wrapper">
+              <div id="contacto-formulario-seccion">
+                <span class="contacto-label">Envíanos un mensaje</span>
+                <h2 class="contacto-form-titulo">¿Tienes alguna consulta?</h2>
+
+                <form class="contacto-form" id="form-contacto" action="#" method="POST">
+                  <div class="form-grupo">
+                    <label for="nombre">Nombre completo</label>
+                    <input
+                      type="text"
+                      id="nombre"
+                      name="nombre"
+                      placeholder="Ej: Juan Pérez"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-grupo">
+                    <label for="correo">Correo electrónico</label>
+                    <input
+                      type="email"
+                      id="correo"
+                      name="correo"
+                      placeholder="Ej: juan@correo.com"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-grupo">
+                    <label for="asunto">Asunto</label>
+                    <input
+                      type="text"
+                      id="asunto"
+                      name="asunto"
+                      placeholder="Ej: Consulta sobre locales"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-grupo">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea
+                      id="mensaje"
+                      name="mensaje"
+                      rows="5"
+                      placeholder="Escribe tu mensaje aquí..."
+                      required
+                    ></textarea>
+                  </div>
+
+                  <button type="submit" class="contacto-btn" id="btn-enviar">
+                    <span>Enviar mensaje</span>
+                  </button>
+                </form>
+              </div>
+
+              <div id="contacto-exito" class="contacto-exito" style="display: none;">
+                <div class="exito-contenido">
+                  <span class="material-symbols-rounded exito-icono" aria-hidden="true">
+                    check_circle
+                  </span>
+                  <h2 class="contacto-form-titulo">¡Mensaje enviado!</h2>
+                  <p class="contacto-exito-texto">
+                    Gracias, <strong id="exito-nombre"></strong>. Hemos recibido tu mensaje con éxito. Nuestro equipo se pondrá en contacto contigo a la brevedad.
+                  </p>
+                  <button id="btn-volver-form" class="contacto-btn contacto-btn--volver">
+                    Enviar otro mensaje
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="contacto-info">
+              <span class="contacto-label">Información de contacto</span>
+              <h2 class="contacto-info-titulo">Encuéntranos</h2>
+
+              <div class="info-card">
+                <span class="material-symbols-rounded info-card__icono" aria-hidden="true">
+                  location_on
+                </span>
+                <div>
+                  <span class="info-card__label">Dirección principal</span>
+                  <span class="info-card__valor">Miraflores, Lima, Perú</span>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <span class="material-symbols-rounded info-card__icono" aria-hidden="true">
+                  call
+                </span>
+                <div>
+                  <span class="info-card__label">Teléfono</span>
+                  <a class="info-card__valor" href="tel:+5154284133">054 284133</a>
+                </div>
+              </div>
+
+              <div class="info-card info-card--whatsapp">
+                <span class="info-card__icono" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 1.35rem; height: 1.35rem;">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.728 2.016 14.252.99 11.63.99c-5.439 0-9.863 4.372-9.867 9.802-.001 1.772.477 3.5 1.39 5.005l-.998 3.644 3.738-.981 1.164.643zm11.233-6.529c-.287-.143-1.696-.837-1.959-.933-.262-.096-.454-.143-.646.143-.192.287-.743.933-.91 1.124-.167.192-.334.215-.621.072-.287-.143-1.21-.446-2.305-1.424-.853-.761-1.429-1.701-1.597-1.988-.167-.287-.018-.442.125-.583.129-.127.287-.335.43-.502.143-.167.192-.287.287-.478.096-.191.048-.359-.024-.502-.072-.143-.646-1.554-.885-2.127-.233-.559-.47-.482-.646-.491-.167-.008-.359-.01-.55-.01s-.502.072-.766.359c-.263.287-1.004.981-1.004 2.392s1.028 2.774 1.171 2.965c.143.191 2.023 3.088 4.902 4.33.685.295 1.219.472 1.636.604.688.219 1.314.188 1.808.114.55-.082 1.696-.693 1.936-1.361.24-.668.24-1.243.167-1.361-.072-.118-.263-.192-.55-.335z"/>
+                  </svg>
+                </span>
+                <div>
+                  <span class="info-card__label">WhatsApp</span>
+                  <a class="info-card__valor" href="https://wa.me/51977610571?text=Hola%20La%20Lucha%2C%20quisiera%20hacer%20una%20consulta..." target="_blank" rel="noopener noreferrer">
+                    977 610 571
+                  </a>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <span class="material-symbols-rounded info-card__icono" aria-hidden="true">
+                  mail
+                </span>
+                <div>
+                  <span class="info-card__label">Correo</span>
+                  <a class="info-card__valor" href="mailto:contacto@lalucha.pe">
+                    contacto@lalucha.pe
+                  </a>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <span class="material-symbols-rounded info-card__icono" aria-hidden="true">
+                  schedule
+                </span>
+                <div>
+                  <span class="info-card__label">Horario de atención</span>
+                  <span class="info-card__valor">Lunes a domingo: 8:00 am - 10:00 pm</span>
+                </div>
+              </div>
+
+              <!-- Redes con enlaces reales -->
+              <div class="contacto-redes">
+                <p class="contacto-redes__titulo">Síguenos en redes</p>
+                <div class="contacto-redes__iconos">
+                  <a href="https://www.facebook.com/laluchasangucheriacriolla/?locale=es_LA" target="_blank" rel="noopener noreferrer" class="red-social"
+                    title="Facebook Oficial" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/>
+                    </svg>
+                  </a>
+                  <a href="https://www.instagram.com/laluchasangucheria/" target="_blank" rel="noopener noreferrer" class="red-social"
+                    title="Instagram Oficial" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contacto-faq">
+        <div class="container">
+          <div class="contacto-faq__header">
+            <h2 class="contacto-faq__titulo">Preguntas Frecuentes</h2>
+            <p class="contacto-faq__subtitulo">Resolvemos tus dudas al instante para ayudarte mejor</p>
+          </div>
+          
+          <div class="faq-lista">
+            <div class="faq-item">
+              <button class="faq-pregunta" aria-expanded="false" aria-controls="faq-ans-1">
+                <span>¿Tienen servicio de delivery a todo Lima?</span>
+                <span class="material-symbols-rounded faq-icono" aria-hidden="true">expand_more</span>
+              </button>
+              <div id="faq-ans-1" class="faq-respuesta" role="region">
+                <p>Sí, contamos con servicio de delivery en las zonas de cobertura cercanas a nuestros locales. También puedes realizar tu pedido en línea a través de nuestra web y programarlo para recoger en tienda de forma rápida.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-pregunta" aria-expanded="false" aria-controls="faq-ans-2">
+                <span>¿Cuáles son los métodos de pago aceptados?</span>
+                <span class="material-symbols-rounded faq-icono" aria-hidden="true">expand_more</span>
+              </button>
+              <div id="faq-ans-2" class="faq-respuesta" role="region">
+                <p>Aceptamos todas las tarjetas de crédito y débito (Visa, Mastercard, American Express, Diners), pago en efectivo en nuestros establecimientos y transferencias directas mediante Yape y Plin.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-pregunta" aria-expanded="false" aria-controls="faq-ans-3">
+                <span>¿Los sánguches se preparan al momento?</span>
+                <span class="material-symbols-rounded faq-icono" aria-hidden="true">expand_more</span>
+              </button>
+              <div id="faq-ans-3" class="faq-respuesta" role="region">
+                <p>¡Por supuesto! En La Lucha mantenemos la tradición criolla de preparar cada sánguche al instante de tu orden, garantizando que el pan artesanal esté caliente y crujiente al morderlo.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-pregunta" aria-expanded="false" aria-controls="faq-ans-4">
+                <span>¿Ofrecen opciones sin carne o vegetarianas?</span>
+                <span class="material-symbols-rounded faq-icono" aria-hidden="true">expand_more</span>
+              </button>
+              <div id="faq-ans-4" class="faq-respuesta" role="region">
+                <p>Sí, contamos con opciones vegetarianas deliciosas como nuestro Sánguche Mixto Especial (queso y huevo) o acompañamientos como papas fritas naturales y camotes fritos artesanalmente.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Maps con el local de Miraflores frente al Parque Kennedy -->
+      <section class="contacto-mapa">
+        <div class="container">
+          <br>
+          <h2 class="contacto-mapa__titulo">Visítanos en Miraflores</h2>
+          <p class="contacto-mapa__subtitulo">Te esperamos en nuestra sucursal principal frente al Parque Kennedy</p>
+          
+          <div class="contacto-mapa__acciones">
+            <a href="https://maps.google.com/?q=La%20Lucha%20Sangucher%C3%ADa%20Criolla%20Av.%20Diagonal%20308%20Miraflores" target="_blank" rel="noopener noreferrer" class="btn-como-llegar">
+              <span class="material-symbols-rounded" aria-hidden="true">directions</span>
+              Cómo llegar
+            </a>
+          </div>
+
+          <div class="mapa-wrapper">
+            <iframe
+              src="https://maps.google.com/maps?q=La%20Lucha%20Sangucher%C3%ADa%20Criolla%20Av.%20Diagonal%20308%20Miraflores%2015074&t=&z=17&ie=UTF8&iwloc=&output=embed"
+              width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" title="Google Maps de La Lucha Miraflores"></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <a href="https://wa.me/51977610571?text=Hola%20La%20Lucha%2C%20quisiera%20hacer%20una%20consulta..." target="_blank" rel="noopener noreferrer" class="whatsapp-flotante" aria-label="Escríbenos por WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.728 2.016 14.252.99 11.63.99c-5.439 0-9.863 4.372-9.867 9.802-.001 1.772.477 3.5 1.39 5.005l-.998 3.644 3.738-.981 1.164.643zm11.233-6.529c-.287-.143-1.696-.837-1.959-.933-.262-.096-.454-.143-.646.143-.192.287-.743.933-.91 1.124-.167.192-.334.215-.621.072-.287-.143-1.21-.446-2.305-1.424-.853-.761-1.429-1.701-1.597-1.988-.167-.287-.018-.442.125-.583.129-.127.287-.335.43-.502.143-.167.192-.287.287-.478.096-.191.048-.359-.024-.502-.072-.143-.646-1.554-.885-2.127-.233-.559-.47-.482-.646-.491-.167-.008-.359-.01-.55-.01s-.502.072-.766.359c-.263.287-1.004.981-1.004 2.392s1.028 2.774 1.171 2.965c.143.191 2.023 3.088 4.902 4.33.685.295 1.219.472 1.636.604.688.219 1.314.188 1.808.114.55-.082 1.696-.693 1.936-1.361.24-.668.24-1.243.167-1.361-.072-.118-.263-.192-.55-.335z"/>
+      </svg>
+    </a>
+
     <!-- FOOTER -->
     <div id="footer-container"></div>
- 
-    <script src="js/main.js"></script>
+
+    <script src="js/menu.js"></script>
+    <script src="js/main.js?v=20260612-cleanup"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('form-contacto');
+        const formSeccion = document.getElementById('contacto-formulario-seccion');
+        const exitoSeccion = document.getElementById('contacto-exito');
+        const exitoNombre = document.getElementById('exito-nombre');
+        const btnVolver = document.getElementById('btn-volver-form');
+        const btnEnviar = document.getElementById('btn-enviar');
+
+        if (form && formSeccion && exitoSeccion) {
+          form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const nombreInput = document.getElementById('nombre').value;
+            const originalText = btnEnviar.innerHTML;
+            btnEnviar.disabled = true;
+            btnEnviar.innerHTML = '<span>Enviando...</span>';
+
+            setTimeout(() => {
+              if (exitoNombre) {
+                exitoNombre.textContent = nombreInput;
+              }
+
+              formSeccion.style.display = 'none';
+              exitoSeccion.style.display = 'block';
+              exitoSeccion.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+              btnEnviar.disabled = false;
+              btnEnviar.innerHTML = originalText;
+              form.reset();
+            }, 1200);
+          });
+        }
+
+        if (btnVolver && formSeccion && exitoSeccion) {
+          btnVolver.addEventListener('click', () => {
+            exitoSeccion.style.display = 'none';
+            formSeccion.style.display = 'block';
+          });
+        }
+
+        const faqPreguntas = document.querySelectorAll('.faq-pregunta');
+
+        faqPreguntas.forEach(pregunta => {
+          pregunta.addEventListener('click', () => {
+            const item = pregunta.parentElement;
+            const respuesta = item.querySelector('.faq-respuesta');
+            const estaAbierto = pregunta.getAttribute('aria-expanded') === 'true';
+
+            document.querySelectorAll('.faq-item').forEach(otroItem => {
+              if (otroItem !== item) {
+                otroItem.classList.remove('faq-item--active');
+                otroItem.querySelector('.faq-pregunta').setAttribute('aria-expanded', 'false');
+                otroItem.querySelector('.faq-respuesta').style.maxHeight = null;
+                otroItem.querySelector('.faq-respuesta').style.opacity = '0';
+              }
+            });
+
+            if (estaAbierto) {
+              pregunta.setAttribute('aria-expanded', 'false');
+              item.classList.remove('faq-item--active');
+              respuesta.style.maxHeight = null;
+              respuesta.style.opacity = '0';
+            } else {
+              pregunta.setAttribute('aria-expanded', 'true');
+              item.classList.add('faq-item--active');
+              respuesta.style.maxHeight = respuesta.scrollHeight + 'px';
+              respuesta.style.opacity = '1';
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
- 
