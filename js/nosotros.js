@@ -157,6 +157,37 @@ function Cifras() {
 }
 
 function FraseFinal() {
+  const frase =
+    "Cada sánguche cuenta una historia. La nuestra empezó en Miraflores y hoy llega a todo el mundo.";
+
+  const [visible, setVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    const seccion = document.querySelector(".nosotros-frase");
+
+    if (!seccion) return;
+
+    const observer = new IntersectionObserver(
+      function (entradas) {
+        const entrada = entradas[0];
+
+        if (entrada.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.35
+      }
+    );
+
+    observer.observe(seccion);
+
+    return function () {
+      observer.disconnect();
+    };
+  }, []);
+
   return e(
     "section",
     { className: "nosotros-frase" },
@@ -165,10 +196,30 @@ function FraseFinal() {
       { className: "container" },
       e(
         "blockquote",
-        { className: "nosotros-frase__texto" },
-        "“Cada sánguche cuenta una historia. La nuestra empezó en Miraflores y hoy llega a más personas con el sabor criollo peruano.”"
+        {
+          className: visible
+            ? "nosotros-frase__texto frase-visible"
+            : "nosotros-frase__texto"
+        },
+        frase.split("").map(function (letra, index) {
+          return e(
+            "span",
+            {
+              key: index,
+              className: "frase-letra",
+              style: {
+                transitionDelay: index * 0.025 + "s"
+              }
+            },
+            letra === " " ? "\u00A0" : letra
+          );
+        })
       ),
-      e("p", { className: "nosotros-frase__autor" }, "— La Lucha Sanguchería Criolla")
+      e(
+        "p",
+        { className: "nosotros-frase__autor" },
+        "— César Taboada Valdiezo, Fundador"
+      )
     )
   );
 }

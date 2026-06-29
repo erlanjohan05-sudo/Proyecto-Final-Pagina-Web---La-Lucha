@@ -447,3 +447,27 @@
     transform: none;
   }
 }
+/* =========================
+   ANIMACIÓN FRASE FINAL
+========================= */
+
+.nosotros-frase__texto {
+  overflow: hidden;
+}
+
+.frase-letra {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(6px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    filter 0.45s ease;
+}
+
+.nosotros-frase__texto.frase-visible .frase-letra {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
